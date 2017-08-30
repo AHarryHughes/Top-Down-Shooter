@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="../src/bin/phaser.js"></script>
+    <script type="text/javascript" src="../src/bin/Boot.js"></script>
+    <script type="text/javascript" src="../src/bin/Preloader.js"></script>
+    <script type="text/javascript" src="../src/levels/MainMenu.js"></script>
+    <script type="text/javascript" src="../src/levels/levelOutside.js"></script>
+    <script type="text/javascript" src="../src/levels/levelHouse.js"></script>
+    <link rel="stylesheet" href="../src/assets/css/style.css">
+</head>
+
+<body>
+    <h1> Top Down Shooter</h1>
+    <h2>HighScore: {{name}} {{waves}}</h2>
+    <script type="text/javascript">
+        window.onload = function () {
+            var game = new Phaser.Game(800, 800, Phaser.AUTO, "GameDiv");
+            game.state.add('../Boot', Game.Boot);
+            game.state.add('../Preloader', Game.Preloader);
+            game.state.add('../MainMenu', Game.MainMenu);
+            game.state.add('../levelOutside', Game.LevelOutside);
+            game.state.add('../levelHouse', Game.LevelHouse);
+            game.state.start('../Boot');
+        };
+
+    </script>
+    <script src="game.js"></script>
+</body>
+
+</html>
