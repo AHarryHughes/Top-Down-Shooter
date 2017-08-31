@@ -28,4 +28,4 @@ Game.Boot.prototype = {
         
         this.state.start('Preloader');
     }
-}
+};

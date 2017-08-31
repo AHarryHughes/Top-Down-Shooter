@@ -5,7 +5,7 @@ const mustache = require('mustache-express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const Users = require("./models/Users");
+const Users = require("../models/Users");
 
 mongoose.connect('mongodb://localhost:27017/Shooterbase');
 mongoose.connection
@@ -20,6 +20,8 @@ application.set('views', './views');
 application.set('view engine', 'mustache');
 
 application.use('/assets', express.static('./src/assets'));
+application.use('/bin', express.static('./src/bin'));
+application.use('/levels', express.static('./src/levels'));
 
 application.use(bodyParser());
 application.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +33,9 @@ application.use(session({
     cookie: { secure: true }
 }));
 
+session.isAuthenticated = false;
+session.user = null;
+
 application.get('/', (request, response) => {
     response.render('login');
 });
@@ -40,20 +45,23 @@ application.post('/', async (request, response) => {
     let password = request.body.password;
 
     let errors = [];
-    console.log('1', await Users.findOne({username: username}));
+
     if(await Users.findOne({username: username}) == null){
         errors.push('This username is not valid');
+        response.render('login', {errors: errors});
     }
     else{
         session.user = await Users.findOne({username: username});
     }
 
     if(session.user.password == password){
+        session.isAuthenticated = true;
         response.redirect('game');
     }
     else{
         session.user = null;
-        response.render('/', {errors: errors});
+        errors.push('This password is not valid');
+        response.render('login', {errors: errors});
     }
 
 
@@ -103,10 +111,18 @@ application.post('/signup', async (request, response) => {
 });
 
 application.get('/game', async (request, response) => {
-    let highScore = {};
+    if(session.isAuthenticated == false){
+        response.redirect('/');
+    }
 
-    let topWaver = await Users.find().sort('-topWave');
-    console.log('2', topWaver);
+    let topWavers = await Users.find();
+
+    let topWaverIndex = 0;
+    for(let i = 1; i < topWavers.length; i++){
+        topWavers[topWaverIndex].topWave < topWavers[i].topWave ? topWaverIndex = i : topWaverIndex = topWaverIndex ;
+    }
+
+    let highScore = {name: topWavers[topWaverIndex].display, waves: topWavers[topWaverIndex].topWave};
 
     response.render('game', highScore);
 });
