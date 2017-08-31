@@ -1,31 +1,16 @@
 //*******************************************************************************INIT VARS*******************************
 
 Game.LevelOutside = function (game) { };
-var entrance;
-var start;
-var spawn1;
-var spawn2;
-var spawn3;
-var spawn4;
-var player;
-var playerBullets;
-var shotgunEnemyBullets;
-var shootTime = 0;
-var enemyShootTime = 0;
-var map;
-var healthText;
-var health;
-var playerXP = 1;
-var gameXPsteps = 15;
-var playerLevel = 1;
-var levelText;
-var experienceText;//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
-var totalEnemies;//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
-var deadEnemies = 0;
-var deadShotgunEnemies = 0;
-var day = false;
-var count = 0;
-var fogOfWar;//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
+//*******************************************************************************REQUIRED FILES******************************
+const mapCreation = require('../creation/levelOutsideMap.js');
+//require is not defined the whole thing is going to have to be classes...
+
+
+
+
+
+
+
 
 
 //*******************************************************************************GAME CLASS*******************************
@@ -34,49 +19,29 @@ Game.LevelOutside.prototype = {
   //*******************************************************************************CREATE*******************************
   create: function (game) {
 
-    //*******************************************************************************(???????????????)*************************
-    map = this.add.tilemap("outside");
-    map.addTilesetImage('outside-tileset', 'outside-tileset');
-
-    //*******************************************************************************MAP CREATION::BASE*******************************
-    let layer = map.createLayer('Base');
-    layer.resizeWorld();
-
-      //*****************************************************************************MAP CREATION::COLLISION*********
-    let collisionLayer = map.createLayer('Collision');
-    this.collisionLayer = collisionLayer;
-    collisionLayer.visible = true;
-    map.setCollisionByExclusion([], true, this.collisionLayer);
-    collisionLayer.resizeWorld();
-
-    //*******************************************************************************MAP CREATION::FOREGROUND*******************************
-    let foregroundCollisionLayer = map.createLayer('ForegroundObjects');
-    this.foregroundCollisionLayer = foregroundCollisionLayer;
-    foregroundCollisionLayer.visible = true;
-    map.setCollisionByExclusion([], true, this.foregroundCollisionLayer);
-    foregroundCollisionLayer.resizeWorld();
-
     //*******************************************************************************PLAYER*******************************
     var player = game.add.sprite(100, 240, 'player');
     this.player = player;
-    player.MOVE_SPEED = 500;
-    player.anchor.set(0.5);
-    player.scale.set(0.2);
-    player.animations.add('idle', [0, 1, 2, 3, 5, 6, 7, 8, 14, 19, 20], 20, true);
-    player.animations.add('move', [4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 18, true);
-    player.play('move');
-    player.maxHealth = 100;
-    player.health = player.maxHealth;
-    game.physics.arcade.enable(player);
-    player.body.setSize(100, 150, 100, 50);
+    this.player.MOVE_SPEED = 500;
+    this.player.anchor.set(0.5);
+    this.player.scale.set(0.2);
+    this.player.animations.add('idle', [0, 1, 2, 3, 5, 6, 7, 8, 14, 19, 20], 20, true);
+    this.player.animations.add('move', [4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 18, true);
+    this.player.play('move');
+    this.player.maxHealth = 100;
+    this.player.health = this.player.maxHealth;
+    game.physics.arcade.enable(this.player);
+    this.player.body.setSize(100, 150, 100, 50);
     game.camera.follow(player);
-    player.body.collideWorldBounds = true;
+    this.player.body.collideWorldBounds = true;
 
     //*******************************************************************************FIND SPAWN LOCATIONS*******************************
-    spawn1 = map.objects.meta.find(o => o.name == 'spawn1');
-    spawn2 = map.objects.meta.find(o => o.name == 'spawn2');
-    spawn3 = map.objects.meta.find(o => o.name == 'spawn3');
-    spawn4 = map.objects.meta.find(o => o.name == 'spawn4');
+    let spawnPoints = [];
+    let spawn1 = this.map.objects.meta.find(o => o.name == 'spawn1');
+    let spawn2 = this.map.objects.meta.find(o => o.name == 'spawn2');
+    let spawn3 = this.map.objects.meta.find(o => o.name == 'spawn3');
+    let spawn4 = this.map.objects.meta.find(o => o.name == 'spawn4');
+    spawnPoints.push(spawn1, spawn2, spawn3, spawn4);
 
     //*******************************************************************************PUNCHERS*******************************
     enemiesTotal = 15;
@@ -84,7 +49,7 @@ Game.LevelOutside.prototype = {
     enemies.enableBody = true;
     enemies.physicsBodyType = Phaser.Physics.ARCADE;
     for (var i = 0; i < enemiesTotal; i++) {
-      var spawn = chooseSpawn(1, 4);
+      let spawn = chooseSpawn(spawnPoints);
       var randomX = Math.random() * 300;
       var randomY = Math.random() * 300;
       var enemy = enemies.create(spawn.x + randomX, spawn.y + randomY, 'flashlight-enemy');
@@ -110,7 +75,7 @@ Game.LevelOutside.prototype = {
     shotgunEnemies.enableBody = true;
     shotgunEnemies.physicsBodyType = Phaser.Physics.ARCADE;
     for (var i = 0; i < shotgunEnemiesTotal; i++) {
-      var spawn = chooseSpawn(1, 4);
+      let spawn = chooseSpawn(spawnPoints);
       var randomX = Math.random() * 300;
       var randomY = Math.random() * 300;
       var shotgunEnemy = shotgunEnemies.create(spawn.x + randomX, spawn.y + randomY, 'shotgun-enemy');
@@ -128,7 +93,7 @@ Game.LevelOutside.prototype = {
       shotgunEnemy.body.velocity.y = 0;
     }
     shotgunEnemies.setAll('health', 100);
-    map.createLayer('Foreground');
+    this.map.createLayer('Foreground');
 
     //*******************************************************************************KEYBOARD SET UP*******************************
     this.keyboardCursors = game.input.keyboard.createCursorKeys();
@@ -149,10 +114,10 @@ Game.LevelOutside.prototype = {
     });
 
     //*******************************************************************************SHOOTERS*******************************
-    let exit = map.objects.meta.find(o => o.name == 'exit');
+    let exit = this.map.objects.meta.find(o => o.name == 'exit');
     this.exitRectangle = new Phaser.Rectangle(exit.x, exit.y, exit.width, exit.height);
-    entrance = map.objects.meta.find(o => o.name == 'entrance');
-    start = map.objects.meta.find(o => o.name == 'start');
+    let entrance = this.map.objects.meta.find(o => o.name == 'entrance');
+    let start = this.map.objects.meta.find(o => o.name == 'start');
     this.cutscene = true;
     this.player.position.set(entrance.x, entrance.y + 30);
     this.player.angle = 0;
@@ -166,28 +131,28 @@ Game.LevelOutside.prototype = {
     game.camera.x = game.world.centerX - game.width / 2;
 
     //*******************************************************************************PLAYER BULLETS*******************************
-    playerBullets = game.add.group();
-    playerBullets.enableBody = true;
-    playerBullets.physicsBodyType = Phaser.Physics.ARCADE;
-    playerBullets.createMultiple(5, 'bullet');
-    playerBullets.setAll('anchor.x', -1);
-    playerBullets.setAll('anchor.y', -1);
-    playerBullets.setAll('scale.x', 0.5);
-    playerBullets.setAll('scale.y', 0.5);
-    playerBullets.setAll('outOfBoundsKill', true);
-    playerBullets.setAll('checkWorldBounds', true);
+    this.playerBullets = game.add.group();
+    this.playerBullets.enableBody = true;
+    this.playerBullets.physicsBodyType = Phaser.Physics.ARCADE;
+    this.playerBullets.createMultiple(5, 'bullet');
+    this.playerBullets.setAll('anchor.x', -1);
+    this.playerBullets.setAll('anchor.y', -1);
+    this.playerBullets.setAll('scale.x', 0.5);
+    this.playerBullets.setAll('scale.y', 0.5);
+    this.playerBullets.setAll('outOfBoundsKill', true);
+    this.playerBullets.setAll('checkWorldBounds', true);
 
     //*******************************************************************************ENEMY BULLETS*******************************
-    shotgunEnemyBullets = game.add.group();
-    shotgunEnemyBullets.enableBody = true;
-    shotgunEnemyBullets.physicsBodyType = Phaser.Physics.ARCADE;
-    shotgunEnemyBullets.createMultiple(100, 'bullet');
-    shotgunEnemyBullets.setAll('anchor.x', -1);
-    shotgunEnemyBullets.setAll('anchor.y', -1);
-    shotgunEnemyBullets.setAll('scale.x', 0.5);
-    shotgunEnemyBullets.setAll('scale.y', 0.5);
-    shotgunEnemyBullets.setAll('outOfBoundsKill', true);
-    shotgunEnemyBullets.setAll('checkWorldBounds', true);
+    this.shotgunEnemyBullets = game.add.group();
+    this.shotgunEnemyBullets.enableBody = true;
+    this.shotgunEnemyBullets.physicsBodyType = Phaser.Physics.ARCADE;
+    this.shotgunEnemyBullets.createMultiple(100, 'bullet');
+    this.shotgunEnemyBullets.setAll('anchor.x', -1);
+    this.shotgunEnemyBullets.setAll('anchor.y', -1);
+    this.shotgunEnemyBullets.setAll('scale.x', 0.5);
+    this.shotgunEnemyBullets.setAll('scale.y', 0.5);
+    this.shotgunEnemyBullets.setAll('outOfBoundsKill', true);
+    this.shotgunEnemyBullets.setAll('checkWorldBounds', true);
 
     //*******************************************************************************FOG*************************************
     this.fogOfWar = this.game.add.bitmapData(this.game.width, this.game.height);
@@ -195,8 +160,8 @@ Game.LevelOutside.prototype = {
     this.playerLight.blendMode = Phaser.blendModes.MULTIPLY;
 
     //*******************************************************************************STAT TEXT*******************************
-    healthText = this.add.text(0, 0, "health", { fontSize: '32px', fill: '#fff' });
-    healthText.fixedToCamera = true;
+    this.healthText = this.add.text(0, 0, "health", { fontSize: '32px', fill: '#fff' });
+    this.healthText.fixedToCamera = true;
     levelText = this.add.text(0, 30, "level", { fontSize: '32px', fill: '#fff' });
     levelText.fixedToCamera = true;
   },
@@ -206,79 +171,78 @@ Game.LevelOutside.prototype = {
 
     //*******************************************************************************SETTING VARS*******************************
     if (this.cutscene) return;
-    let player = this.player;
     this.playerLight.reset(this.game.camera.x, this.game.camera.y);
     let keyboardCursors = this.keyboardCursors;
     let playerInteraction = this.playerInteraction;
     let moveSpeed = this.moveSpeed;
     let playerLight = this.playerLight;
     let fogOfWar = this.fogOfWar;
-    dayNightCycle(playerLight, fogOfWar, player);
-    health = player.health;
-    maxHealth = player.maxHealth;
-    healthText.text = 'Player Health: ' + health + "/" + maxHealth;
-    levelText.text = 'Player Level: ' + playerLevel;
+    dayNightCycle(playerLight, fogOfWar, this.player);
+    let health = this.player.health;
+    maxHealth = this.player.maxHealth;
+    this.healthText.text = 'Player Health: ' + health + "/" + maxHealth;
+    levelText.text = 'Player Level: ' + this.playerLevel;
     //*******************************************************************************COLLIDERS SET*******************************
     game.physics.arcade.collide(this.player, this.collisionLayer);
     game.physics.arcade.collide(this.player, this.foregroundCollisionLayer);
 
     //*******************************************************************************LEVEL UPGRADES SET*******************************
-    playerLevelUpgrades(player);
+    this.playerLevelUpgrades(this.player);
 
     //*******************************************************************************OVERLAP TRIGGERS SET*******************************
-    game.physics.arcade.overlap(playerBullets, enemies, this.enemyShot, null, this);
-    game.physics.arcade.overlap(playerBullets, shotgunEnemies, this.enemyShot, null, this);
-    game.physics.arcade.overlap(enemies, player, meleePlayer);
-    game.physics.arcade.overlap(player, shotgunEnemyBullets, this.playerShot, null, this);
+    game.physics.arcade.overlap(this.playerBullets, enemies, this.enemyShot, null, this);
+    game.physics.arcade.overlap(this.playerBullets, shotgunEnemies, this.enemyShot, null, this);
+    game.physics.arcade.overlap(enemies, this.player, meleePlayer);
+    game.physics.arcade.overlap(this.player, this.shotgunEnemyBullets, this.playerShot, null, this);
 
     //*******************************************************************************COLLIDERS SET*******************************
     function meleePlayer () {
       game.camera.shake(0.005, 500);
-      player.health -= 1;
+      this.player.health -= 1;
     }
 
     //*******************************************************************************CLICK SET TO SHOOT*******************************
     if (game.input.mousePointer.isDown) {
-      this.shootBullet(player);
+      this.shootBullet(this.player);
     }
 
     //*******************************************************************************MAKE SURE THEY DON'T SLIDE*******************************
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
+    this.player.body.velocity.x = 0;
+    this.player.body.velocity.y = 0;
 
     //*******************************************************************************CLICK TO MOVE*******************************
-    if (keyboardCursors.left.isDown || playerInteraction.left.isDown) moveSpeed.x = -player.MOVE_SPEED;
-    else if (keyboardCursors.right.isDown || playerInteraction.right.isDown) moveSpeed.x = player.MOVE_SPEED;
+    if (keyboardCursors.left.isDown || playerInteraction.left.isDown) moveSpeed.x = -this.player.MOVE_SPEED;
+    else if (keyboardCursors.right.isDown || playerInteraction.right.isDown) moveSpeed.x = this.player.MOVE_SPEED;
     else moveSpeed.x = 0;
-    if (keyboardCursors.up.isDown || playerInteraction.up.isDown) moveSpeed.y = -player.MOVE_SPEED;
-    else if (keyboardCursors.down.isDown || playerInteraction.down.isDown) moveSpeed.y = player.MOVE_SPEED;
+    if (keyboardCursors.up.isDown || playerInteraction.up.isDown) moveSpeed.y = -this.player.MOVE_SPEED;
+    else if (keyboardCursors.down.isDown || playerInteraction.down.isDown) moveSpeed.y = this.player.MOVE_SPEED;
     else moveSpeed.y = 0;
     if (Math.abs(moveSpeed.x) > 0 || Math.abs(moveSpeed.y) > 0) {
-      player.body.velocity.x = moveSpeed.x;
-      player.body.velocity.y = moveSpeed.y;
+      this.player.body.velocity.x = moveSpeed.x;
+      this.player.body.velocity.y = moveSpeed.y;
     }
     //*******************************************************************************SET SPRITE IMAGES*******************************
-    if (Math.abs(player.body.velocity.x) > 0 || Math.abs(player.body.velocity.y) > 0) {
-      player.play('move');
+    if (Math.abs(this.player.body.velocity.x) > 0 || Math.abs(this.player.body.velocity.y) > 0) {
+      this.player.play('move');
     } else {
-      player.play('idle');
+      this.player.play('idle');
     }
 
     //*******************************************************************************TRIGGERS INSIDE AT DOOR*******************************
-    if (Phaser.Rectangle.containsPoint(this.exitRectangle, player.position)) {
+    if (Phaser.Rectangle.containsPoint(this.exitRectangle, this.player.position)) {
       this.state.start('levelHouse');
     }
 
     //*******************************************************************************PLAYER FACES MOUSE*******************************
-    player.rotation = game.physics.arcade.angleToPointer(player);
+      this.player.rotation = game.physics.arcade.angleToPointer(this.player);
 
     //*******************************************************************************ANGLES PUNCHERS AND SENDS TO PLAYER*******************************
     enemies.forEachAlive(function (enemies) {
         enemies.body.collideWorldBounds = true,
         enemies.body.velocity.x = 0,
         enemies.body.velocity.y = 0,
-        enemies.rotation = game.physics.arcade.angleToXY(enemies, player.x, player.y);
-      chasePlayer(player, enemies, game);
+        enemies.rotation = game.physics.arcade.angleToXY(enemies, this.player.x, this.player.y);
+      chasePlayer(this.player, enemies, game);
     });
 
     //*******************************************************************************ANGLES SHOOTERS AND SENDS TO PLAYER*******************************
@@ -286,37 +250,38 @@ Game.LevelOutside.prototype = {
       shotgunEnemies.body.collideWorldBounds = true,
         shotgunEnemies.body.velocity.x = 0;
       shotgunEnemies.body.velocity.y = 0;
-      shotgunEnemies.rotation = game.physics.arcade.angleToXY(shotgunEnemies, player.x, player.y);
-      shootPlayer(player, shotgunEnemies, game);
+      shotgunEnemies.rotation = game.physics.arcade.angleToXY(shotgunEnemies, this.player.x, this.player.y);
+      this.shootPlayer(this.player, shotgunEnemies, game);
     });
 
     //*******************************************************************************XP AND HEALTH HANDLERS*******************************
-    calculateDeadEnemies(enemies);
+    this.calculateDeadEnemies(enemies);
 
-    if (player.health <= 0) {
+    if (this.player.health <= 0) {
       this.state.start('levelHouse');
     }
-    if (player.health <= 30) {
-      player.tint = Math.random() * 0xffffff;
+    if (this.player.health <= 30) {
+      this.player.tint = Math.random() * 0xffffff;
     }
 
-    playerLevel = Math.round(Math.log(playerXP, gameXPsteps));
+    let gameXPsteps = 15;
+    this.playerLevel = Math.round(Math.log(this.playerXP, gameXPsteps));
 
 
     //*******************************************************************************TIMER TO HANDLE FOG*******************************
     function dayNightCycle(playerLight, fogOfWar, player) {
-      console.log('count:', count);
-      count += 1;
-      if (count >= 500) {
-        count = 0;
-        day = !day;
+      console.log('count:', this.count);
+      this.count += 1;
+      if (this.count >= 500) {
+        this.count = 0;
+        this.day = !this.day;
       }
-      if (day === false) {
+      if (this.day === false) {
         updatefogOfWar(playerLight, fogOfWar, player);
         
         enemies.moveSpeed = 1000;
       }
-      else if (day === true) {
+      else if (this.day === true) {
         playerLight.kill();
         enemies.moveSpeed = 150
       }
@@ -359,47 +324,84 @@ Game.LevelOutside.prototype = {
     player.damage(10);
     shotgunEnemyBullets.kill();
   },
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
-  bulletCollide: function(playerBullets){
-
-    playerBullets.kill();
-  },
-    //*******************************************************************************PLAYER FIRES A BULLET*******************************
+  //*******************************************************************************PLAYER FIRES A BULLET*******************************
   shootBullet: function (player) {
-    if (this.time.now > shootTime) {
-      bullet = playerBullets.getFirstExists(false);
+    if (this.time.now > this.shootTime) {
+      bullet = this.playerBullets.getFirstExists(false);
       if (bullet) {
         bullet.reset(player.x, player.y);
         bullet.body.velocity.x = 10000;
-        shootTime = this.time.now + 100;
+        this.shootTime = this.time.now + 100;
         bullet.rotation = this.physics.arcade.moveToPointer(bullet, 10000, this.input.activePointer, 100);
         bullet.lifespan = 3000;
       }
     }
   },
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
-  shootPlayer: function (player, shotgunEnemies, game) {
-    if (this.time.now > enemyShootTime) {
-      enemyBullet = shotgunEnemyBullets.getFirstExists(false);
-      if (enemyBullet) {
-        enemyBullet.reset(shotgunEnemies.x, shotgunEnemies.y);
-        enemyBullet.body.velocity.x = 100;
-        enemyShootTime = this.time.now + 2000;
-        enemyBullet.lifespan = 1000;
-      }
+    //*******************************************************************************ENEMY FIRES A BULLET*******************************
+  fireBullets: function (shotgunEnemies, player, game) {
+    if (game.time.now > this.enemyShootTime) {
+        bullet = shotgunEnemyBullets.getFirstExists(false);
+        if (bullet) {
+            bullet.reset(shotgunEnemies.x, shotgunEnemies.y + 8);
+            bullet.body.velocity.x = 100;
+            this.enemyShootTime = game.time.now + 200;
+            bullet.rotation = game.physics.arcade.moveToObject(bullet, player, 500);
+        }
     }
-  }
-}
+  },
+  count: 0,
+  day: false,
+  deadEnemies: 0,
+  deadShotgunEnemies: 0,
+  levelText: null,
+  playerLevel: 1,
+  playerXP: 1,
+  healthText: null,
+  map: mapCreation(game),
+  enemyShootTime: 0,
+  shootTime: 0,
+  player: null,
+  playerBullets: null,
+  shotgunEnemyBullets: null,
+  //*******************************************************************************GIVES XP FOR KILLS*******************************
+  calculateDeadEnemies: function(enemies) {
+    if (this.deadEnemies < enemies.countDead()) {
+        this.deadEnemies = enemies.countDead();
+        this.playerXP += 5;
+    }
+    if (this.deadShotgunEnemies < shotgunEnemies.countDead()) {
+        this.deadShotgunEnemies = shotgunEnemies.countDead();
+        this.playerXP += 10;
+    }
+  },
+  //*******************************************************************************UPGRADES PLAYER BASED ON LEVEL*******************************
+  playerLevelUpgrades: function (player) {
+    if (this.playerLevel >= 2) {
+        player.MOVE_SPEED = 400;
+    } else if (this.playerLevel >= 3) {
+        player.MOVE_SPEED = 600;
+        player.damage = player.damage += 10;
+    }
+  }, //*******************************************************************************HANDLES ENEMY SHOOTER ATTACKS*******************************
+  shootPlayer: function (player, shotgunEnemies, game) {
+    if (
+        (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) > 200) &&
+        (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) < 400)
+    ) {
+        game.physics.arcade.moveToObject(shotgunEnemies, player, 150);
+        shotgunEnemies.animations.play('move');
+    }
+    else if (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) <= 200) {
+        shotgunEnemies.animations.play('shoot');
+        this.fireBullets(shotgunEnemies, player, game);
+    }
+    else {
+        shotgunEnemies.animations.play('idle');
+    }
+  },
+};
 
-//*******************************************************************************UPGRADES PLAYER BASED ON LEVEL*******************************
-function playerLevelUpgrades(player) {
-  if (playerLevel >= 2) {
-    player.MOVE_SPEED = 400;
-  } else if (playerLevel >= 3) {
-    player.MOVE_SPEED = 600;
-    player.damage = player.damage += 10;
-  }
-}
+
 
 //*******************************************************************************HANDLES ENEMY CHASE*******************************
 function chasePlayer(player, enemies, game) {
@@ -418,70 +420,7 @@ function chasePlayer(player, enemies, game) {
   }
 }
 
-//*******************************************************************************HANDLES ENEMY SHOOTER ATTACKS*******************************
-function shootPlayer(player, shotgunEnemies, game) {
-  if (
-    (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) > 200) &&
-    (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) < 400)
-  ) {
-    game.physics.arcade.moveToObject(shotgunEnemies, player, 150);
-    shotgunEnemies.animations.play('move');
-  }
-  else if (player.alive && game.physics.arcade.distanceBetween(player, shotgunEnemies) <= 200) {
-    shotgunEnemies.animations.play('shoot');
-    fireBullets(shotgunEnemies, player, game);
-  }
-  else {
-    shotgunEnemies.animations.play('idle');
-  }
-}
-
-//*******************************************************************************ENEMY FIRES A BULLET*******************************
-function fireBullets(shotgunEnemies, player, game) {
-  if (game.time.now > enemyShootTime) {
-    bullet = shotgunEnemyBullets.getFirstExists(false);
-    if (bullet) {
-      bullet.reset(shotgunEnemies.x, shotgunEnemies.y + 8);
-      bullet.body.velocity.x = 100;
-      enemyShootTime = game.time.now + 200;
-      bullet.rotation = game.physics.arcade.moveToObject(bullet, player, 500);
-    }
-  }
-}
-
-//*******************************************************************************GIVES XP FOR KILLS*******************************
-function calculateDeadEnemies(enemies) {
-  if (deadEnemies < enemies.countDead()) {
-    deadEnemies = enemies.countDead();
-    playerXP += 5;
-  }
-  if (deadShotgunEnemies < shotgunEnemies.countDead()) {
-    deadShotgunEnemies = shotgunEnemies.countDead();
-    playerXP += 10;
-  }
-}
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++UNUSED+++++++++++++++++++++++++++++++++++
-function checkOverlap(spriteA, spriteB) {
-  var boundsA = spriteA.getBounds();
-  var boundsB = spriteB.getBounds();
-
-  return Phaser.Rectangle.intersects(boundsA, boundsB);
-}
-
 //*******************************************************************************RANDOM SPAWN LOC SELECT*******************************
-function chooseSpawn(minimum, maximum) {
-  minimum = Math.ceil(minimum);
-  maximum = Math.floor(maximum);
-  let number = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-  if (number === 1) {
-    return spawn1;
-  } else if (number === 2) {
-    return spawn2;
-  } else if (number === 3) {
-    return spawn3;
-  } else if (number == 4) {
-    return spawn4;
-  }
-
+function chooseSpawn(spawnPoints) {
+  return spawnPoints[Math.ceil(Math.random() * spawnPoints.length)];
 }
