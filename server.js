@@ -5,7 +5,7 @@ const mustache = require('mustache-express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const Users = require("../models/Users");
+const Users = require("./models/Users");
 
 mongoose.connect('mongodb://localhost:27017/Shooterbase');
 mongoose.connection
@@ -20,7 +20,6 @@ application.set('views', './views');
 application.set('view engine', 'mustache');
 
 application.use('/assets', express.static('./src/assets'));
-application.use('/src', express.static('./src'));
 
 application.use(bodyParser());
 application.use(bodyParser.urlencoded({ extended: true }));
