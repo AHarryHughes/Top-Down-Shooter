@@ -20,8 +20,7 @@ application.set('views', './views');
 application.set('view engine', 'mustache');
 
 application.use('/assets', express.static('./src/assets'));
-application.use('/bin', express.static('./src/bin'));
-application.use('/levels', express.static('./src/levels'));
+application.use('/src', express.static('./src'));
 
 application.use(bodyParser());
 application.use(bodyParser.urlencoded({ extended: true }));
