@@ -1,11 +1,11 @@
 
 
 
-Game.LevelHouse = function (game) { };
+Game.levelHouse = function (game) { };
 var entrance;
 var start;
 var tavern = null;
-Game.LevelHouse.prototype = {
+Game.levelHouse.prototype = {
   create: function (game) {
     let map = this.add.tilemap("inside");
     map.addTilesetImage('inside-tileset', 'inside-tileset');

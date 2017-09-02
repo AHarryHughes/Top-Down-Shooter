@@ -30,7 +30,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 p2.js authors
+ * Copyright (c) 2015 p2.src authors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -722,22 +722,22 @@ module.exports={
   "description": "A JavaScript 2D physics engine.",
   "author": "Stefan Hedman <schteppe@gmail.com> (http://steffe.se)",
   "keywords": [
-    "p2.js",
+    "p2.src",
     "p2",
     "physics",
     "engine",
     "2d"
   ],
-  "main": "./src/p2.js",
+  "main": "./src/p2.src",
   "engines": {
     "node": "*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/schteppe/p2.js.git"
+    "url": "https://github.com/schteppe/p2.src.git"
   },
   "bugs": {
-    "url": "https://github.com/schteppe/p2.js/issues"
+    "url": "https://github.com/schteppe/p2.src/issues"
   },
   "licenses": [
     {
@@ -11977,10 +11977,10 @@ Utils.splice = function(array,index,howmany){
  * @property {function} ARRAY_TYPE
  * @example
  *     <script>
- *         <!-- Inject your preferred array type before loading p2.js -->
+ *         <!-- Inject your preferred array type before loading p2.src -->
  *         P2_ARRAY_TYPE = Array;
  *     </script>
- *     <script src="p2.js"></script>
+ *     <script src="p2.src"></script>
  */
 if(typeof P2_ARRAY_TYPE !== 'undefined') {
     Utils.ARRAY_TYPE = P2_ARRAY_TYPE;
@@ -13653,13 +13653,13 @@ World.prototype.raycast = function(result, ray){
  */
 
 /**
- * The [pixi.js](http://www.pixijs.com/) module/namespace.
+ * The [pixi.src](http://www.pixijs.com/) module/namespace.
  *
  * @module PIXI
  */
  
 /**
- * Namespace-class for [pixi.js](http://www.pixijs.com/).
+ * Namespace-class for [pixi.src](http://www.pixijs.com/).
  *
  * Contains assorted static properties and enumerations.
  *
@@ -23384,7 +23384,7 @@ if (!Array.prototype.forEach)
 }
 
 /**
-* Low-budget Float32Array knock-off, suitable for use with P2.js in IE9
+* Low-budget Float32Array knock-off, suitable for use with P2.src in IE9
 * Source: http://www.html5gamedevs.com/topic/5988-phaser-12-ie9/
 * Cameron Foale (http://www.kibibu.com)
 */
@@ -34975,7 +34975,7 @@ Object.defineProperty(Phaser.Group.prototype, "bottom", {
 * @return {Phaser.Group} This Group.
 */
 
-//  This function is set at the bottom of src/gameobjects/components/Bounds.js
+//  This function is set at the bottom of src/gameobjects/components/Bounds.src
 
 /**
 * Aligns this Group to the side of another Game Object, or Rectangle, known as the
@@ -35018,10 +35018,10 @@ Object.defineProperty(Phaser.Group.prototype, "bottom", {
 * @return {Phaser.Group} This Group.
 */
 
-//  This function is set at the bottom of src/gameobjects/components/Bounds.js
+//  This function is set at the bottom of src/gameobjects/components/Bounds.src
 
 /**
-* A display object is any object that can be rendered in the Phaser/pixi.js scene graph.
+* A display object is any object that can be rendered in the Phaser/pixi.src scene graph.
 *
 * This includes {@link Phaser.Group} (groups are display objects!),
 * {@link Phaser.Sprite}, {@link Phaser.Button}, {@link Phaser.Text}
@@ -36079,7 +36079,7 @@ Phaser.Game.prototype = {
         if (this.device.chrome)
         {
             var args = [
-                '%c %c %c Phaser v' + v + ' | Pixi.js | ' + r + ' | ' + a + '  %c %c ' + '%c http://phaser.io %c\u2665%c\u2665%c\u2665',
+                '%c %c %c Phaser v' + v + ' | Pixi.src | ' + r + ' | ' + a + '  %c %c ' + '%c http://phaser.io %c\u2665%c\u2665%c\u2665',
                 'background: #fb8cb3',
                 'background: #d44a52',
                 'color: #ffffff; background: #871905;',
@@ -36104,7 +36104,7 @@ Phaser.Game.prototype = {
         }
         else if (window['console'])
         {
-            console.log('Phaser v' + v + ' | Pixi.js ' + PIXI.VERSION + ' | ' + r + ' | ' + a + ' | http://phaser.io');
+            console.log('Phaser v' + v + ' | Pixi.src ' + PIXI.VERSION + ' | ' + r + ' | ' + a + ' | http://phaser.io');
         }
 
     },
@@ -43257,7 +43257,7 @@ Phaser.Gamepad.prototype = {
 Phaser.Gamepad.prototype.constructor = Phaser.Gamepad;
 
 /**
-* If the gamepad input is active or not - if not active it should not be updated from Input.js
+* If the gamepad input is active or not - if not active it should not be updated from Input.src
 * @name Phaser.Gamepad#active
 * @property {boolean} active - If the gamepad input is active or not.
 * @readonly
@@ -48319,7 +48319,7 @@ Phaser.GameObjectFactory.prototype = {
     * 
     * Note 1: You can only use Phaser.Creature objects in WebGL enabled games. They do not work in Canvas mode games.
     *
-    * Note 2: You must use a build of Phaser that includes the CreatureMeshBone.js runtime and gl-matrix.js, or have them
+    * Note 2: You must use a build of Phaser that includes the CreatureMeshBone.src runtime and gl-matrix.src, or have them
     * loaded before your Phaser game boots.
     * 
     * See the Phaser custom build process for more details.
@@ -60208,7 +60208,7 @@ Phaser.TileSprite.prototype.reset = function(x, y) {
 * unless the documentation states otherwise: properties may return `false`, `''`, `null`, or even `undefined`
 * when indicating the lack of a feature.
 *
-* Uses elements from System.js by MrDoob and Modernizr
+* Uses elements from System.src by MrDoob and Modernizr
 *
 * @description
 * It is not possible to instantiate the Device class manually.
@@ -60271,7 +60271,7 @@ Phaser.Device = function () {
     this.cordova = false;
     
     /**
-    * @property {boolean} node - Is the game running under Node.js?
+    * @property {boolean} node - Is the game running under Node.src?
     * @default
     */
     this.node = false;
@@ -64134,7 +64134,7 @@ Phaser.Net.prototype.constructor = Phaser.Net;
 * Phaser.Game has a single instance of the TweenManager through which all Tween objects are created and updated.
 * Tweens are hooked into the game clock and pause system, adjusting based on the game state.
 *
-* TweenManager is based heavily on tween.js by http://soledadpenades.com.
+* TweenManager is based heavily on tween.src by http://soledadpenades.com.
 * The difference being that tweens belong to a games instance of TweenManager, rather than to a global TWEEN object.
 * It also has callbacks swapped for Signals and a few issues patched with regard to properties and completion errors.
 * Please see https://github.com/sole/tween.js for a full list of contributors.
@@ -73186,7 +73186,7 @@ Phaser.Loader.prototype = {
     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
     *
     * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.js". It will always add `.js` as the extension.
+    * and no URL is given then the Loader will set the URL to be "alien.src". It will always add `.src` as the extension.
     * If you do not desire this action then provide a URL.
     *
     * Upon successful load the JavaScript is automatically turned into a script tag and executed, so be careful what you load!
@@ -73196,7 +73196,7 @@ Phaser.Loader.prototype = {
     *
     * @method Phaser.Loader#script
     * @param {string} key - Unique asset key of the script file.
-    * @param {string} [url] - URL of the JavaScript file. If undefined or `null` the url will be set to `<key>.js`, i.e. if `key` was "alien" then the URL will be "alien.js".
+    * @param {string} [url] - URL of the JavaScript file. If undefined or `null` the url will be set to `<key>.src`, i.e. if `key` was "alien" then the URL will be "alien.src".
     * @param {function} [callback=(none)] - Optional callback that will be called after the script tag has loaded, so you can perform additional processing.
     * @param {object} [callbackContext=(loader)] - The context under which the callback will be applied. If not specified it will use the Phaser Loader as the context.
     * @return {Phaser.Loader} This Loader instance.
@@ -73207,7 +73207,7 @@ Phaser.Loader.prototype = {
 
         if (callback !== false && callbackContext === undefined) { callbackContext = this; }
 
-        return this.addToFileList('script', key, url, { syncPoint: true, callback: callback, callbackContext: callbackContext }, false, '.js');
+        return this.addToFileList('script', key, url, { syncPoint: true, callback: callback, callbackContext: callbackContext }, false, '.src');
 
     },
 
