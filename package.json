@@ -5,7 +5,9 @@
   "main": "Boot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "browserify ./client/game.js -o bundle.js -t [ bubleify ]",
+    "dev": "watchify ./client/game.js -o bundle.js -t [ bubleify ]"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,10 @@
     "mongodb": "^2.2.31",
     "mongoose": "^4.10.8",
     "mustache-express": "^1.2.5"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "bubleify": "^0.7.0",
+    "watchify": "^3.9.0"
   }
 }

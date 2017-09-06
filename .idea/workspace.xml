@@ -2,40 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6142eb1-6e6c-4917-bef3-fba64f7dd4ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/login.mustache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/signup.mustache" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Boot.js" afterPath="$PROJECT_DIR$/src/bin/Boot.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/MainMenu.js" afterPath="$PROJECT_DIR$/src/levels/MainMenu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Preloader.js" afterPath="$PROJECT_DIR$/src/bin/Preloader.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/animations/player-rifle.json" afterPath="$PROJECT_DIR$/src/assets/animations/player-rifle.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/animations/player-rifle.png" afterPath="$PROJECT_DIR$/src/assets/animations/player-rifle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/background.jpg" afterPath="$PROJECT_DIR$/src/assets/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/css/background.jpg" afterPath="$PROJECT_DIR$/src/assets/css/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maps/inside-tileset.png" afterPath="$PROJECT_DIR$/src/assets/maps/inside-tileset.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maps/level-inside.json" afterPath="$PROJECT_DIR$/src/assets/maps/level-inside.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maps/level-outside.json" afterPath="$PROJECT_DIR$/src/assets/maps/level-outside.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maps/outside-tileset.png" afterPath="$PROJECT_DIR$/src/assets/maps/outside-tileset.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/outsideCompound.tmx" afterPath="$PROJECT_DIR$/src/assets/outsideCompound.tmx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/bullet.png" afterPath="$PROJECT_DIR$/src/assets/sprites/bullet.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/button.png" afterPath="$PROJECT_DIR$/src/assets/sprites/button.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/flashlight-enemy.json" afterPath="$PROJECT_DIR$/src/assets/sprites/flashlight-enemy.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/flashlight-enemy.png" afterPath="$PROJECT_DIR$/src/assets/sprites/flashlight-enemy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/menu-image.png" afterPath="$PROJECT_DIR$/src/assets/sprites/menu-image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/shotgun-enemy.json" afterPath="$PROJECT_DIR$/src/assets/sprites/shotgun-enemy.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sprites/shotgun-enemy.png" afterPath="$PROJECT_DIR$/src/assets/sprites/shotgun-enemy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/views/game.mustache" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/levelHouse.js" afterPath="$PROJECT_DIR$/src/levels/levelHouse.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/levelOutside.js" afterPath="$PROJECT_DIR$/src/levels/levelOutside.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/phaser.js" afterPath="$PROJECT_DIR$/src/bin/phaser.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/phaser.min.js" afterPath="$PROJECT_DIR$/src/bin/phaser.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/Castle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/PathAndObjects.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/blood.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/blood.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/castle-built.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/mountain_landscape.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/town.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees_plants.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees_plants_rocks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/BETA-MAP/large-map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/Castle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/PathAndObjects.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/blood.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/castle-built.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/large-map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/mountain_landscape.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/outside-tileset.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/town.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/trees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/trees_plants.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/trees_plants_rocks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/Outside.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/blood.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/castle-built.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/castle-tileset.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/mountain-tileset.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/outside-compound.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/paths-and-obects.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/town-tileset.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees-plants-rocks.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees-plants.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/Tilesets/trees.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/BETA-MAP/beta-map-tileset.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/BETA-MAP/outside-beta.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/BETA-MAP/outside-beta.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/blood.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/large-map-new.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/large-map-single-image.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/large-map.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/outside-tileset.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/TMX/test.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/Outside.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/large-map-single-image.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/maps/large-map.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/events/outsideEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/game.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/helpers/outsideText.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/keyConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/maps/BuildMap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/maps/InsideMap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/maps/OutsideMap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Boss.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Bullets.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Enemy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/House.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Item.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Merc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/NPC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Player.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/ShotgunEnemy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/sprites/Tower.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/Boot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/LevelBuild.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/LevelHouse.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/LevelOutside.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/MainMenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/states/Preloader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/gamepad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/outside.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/outsideTakeTwo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/outsideTakeTwo.tmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/outsidev2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/outsidev2.tmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/tilesetHouse.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/woodland.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/oldassets/woodland.tsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/assets/background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/assets/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bin/Boot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bin/Preloader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/levels/MainMenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/levels/levelHouse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/levels/levelOutside.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/game.mustache" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/animations/player-rifle.json" afterPath="$PROJECT_DIR$/client/assets/animations/player-rifle.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/animations/player-rifle.png" afterPath="$PROJECT_DIR$/client/assets/animations/player-rifle.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/css/background.jpg" afterPath="$PROJECT_DIR$/client/assets/css/background.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/maps/inside-tileset.png" afterPath="$PROJECT_DIR$/client/assets/maps/inside-tileset.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/maps/level-inside.json" afterPath="$PROJECT_DIR$/client/assets/maps/level-inside.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/maps/level-outside.json" afterPath="$PROJECT_DIR$/client/assets/maps/level-outside.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/maps/outside-tileset.png" afterPath="$PROJECT_DIR$/client/Tilesets/outside-tileset.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/outsideCompound.tmx" afterPath="$PROJECT_DIR$/client/assets/TMX/outsideCompound.tmx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/bullet.png" afterPath="$PROJECT_DIR$/client/assets/sprites/bullet.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/button.png" afterPath="$PROJECT_DIR$/client/assets/sprites/button.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/flashlight-enemy.json" afterPath="$PROJECT_DIR$/client/assets/sprites/flashlight-enemy.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/flashlight-enemy.png" afterPath="$PROJECT_DIR$/client/assets/sprites/flashlight-enemy.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/menu-image.png" afterPath="$PROJECT_DIR$/client/assets/sprites/menu-image.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/shotgun-enemy.json" afterPath="$PROJECT_DIR$/client/assets/sprites/shotgun-enemy.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assets/sprites/shotgun-enemy.png" afterPath="$PROJECT_DIR$/client/assets/sprites/shotgun-enemy.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/bin/phaser.js" afterPath="$PROJECT_DIR$/client/phaser.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/bin/phaser.min.js" afterPath="$PROJECT_DIR$/client/phaser.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.mustache" afterPath="$PROJECT_DIR$/views/login.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.mustache" afterPath="$PROJECT_DIR$/views/signup.mustache" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,34 +125,74 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-              <folding>
-                <marker date="1504126474000" expanded="true" signature="320:527" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.mustache" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/game.mustache">
+      <file leaf-file-name="LevelOutside.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/states/LevelOutside.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+            <state relative-caret-position="870">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShotgunEnemy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/sprites/ShotgunEnemy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enemy.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/sprites/Enemy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="67" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boss.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/sprites/Boss.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1590">
+              <caret line="106" column="42" lean-forward="false" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Merc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/sprites/Merc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/sprites/Player.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="886">
+              <caret line="95" column="36" lean-forward="false" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -93,8 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>boot</find>
-      <find>enableBody</find>
       <find>cutscene</find>
       <find>moveSpeed</find>
       <find>dayNightCycle</find>
@@ -107,7 +222,6 @@
       <find>playerLight</find>
       <find>overlap:</find>
       <find>playerLevelUpgrades</find>
-      <find>shootBullet</find>
       <find>this.time</find>
       <find>collideHandler:</find>
       <find>time.now</find>
@@ -120,6 +234,12 @@
       <find>shootTime</find>
       <find>cutsc</find>
       <find>chase</find>
+      <find>shootBullet</find>
+      <find>Sprite</find>
+      <find>Phaser.Sprite</find>
+      <find>updatePlayerStats</find>
+      <find>map</find>
+      <find>player</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,7 +249,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/levelOutside.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/login.html" />
         <option value="$PROJECT_DIR$/views/signup.html" />
         <option value="$PROJECT_DIR$/models/Scores.js" />
@@ -138,9 +257,30 @@
         <option value="$PROJECT_DIR$/views/login.mustache" />
         <option value="$PROJECT_DIR$/models/Users.js" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/views/game.mustache" />
         <option value="$PROJECT_DIR$/src/game.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/client/states/Preloader.js" />
+        <option value="$PROJECT_DIR$/client/states/Boot.js" />
+        <option value="$PROJECT_DIR$/client/states/levelOutside.js" />
+        <option value="$PROJECT_DIR$/client/game.js" />
+        <option value="$PROJECT_DIR$/client/states/MainMenu.js" />
+        <option value="$PROJECT_DIR$/client/maps/BuildMap.js" />
+        <option value="$PROJECT_DIR$/client/maps/InsideMap.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Bullet.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Bullets.js" />
+        <option value="$PROJECT_DIR$/client/maps/OutsideMap.js" />
+        <option value="$PROJECT_DIR$/client/events/outsideEvents.js" />
+        <option value="$PROJECT_DIR$/client/keyConfig.js" />
+        <option value="$PROJECT_DIR$/client/helpers/outsideText.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Player.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Enemy.js" />
+        <option value="$PROJECT_DIR$/client/sprites/ShotgunEnemy.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Merc.js" />
+        <option value="$PROJECT_DIR$/client/sprites/Boss.js" />
+        <option value="$PROJECT_DIR$/client/states/LevelOutside.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -161,10 +301,12 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="-41" />
+    <option name="y" value="-768" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -182,6 +324,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,31 +335,43 @@
             <path>
               <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="levels" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="maps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="sprites" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Top-Down-Shooter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Top-Down-Shooter" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="states" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,6 +386,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/levels" />
@@ -261,6 +419,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e6142eb1-6e6c-4917-bef3-fba64f7dd4ac" name="Default" comment="" />
@@ -269,30 +430,33 @@
       <option name="presentableId" value="Default" />
       <updated>1503955566718</updated>
       <workItem from="1503955575905" duration="55874000" />
+      <workItem from="1504676694503" duration="68000" />
+      <workItem from="1504678136700" duration="596000" />
+      <workItem from="1504682737981" duration="17951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55874000" />
+    <option name="totallyTimeSpent" value="76773000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-41" y="-768" width="1366" height="768" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25019857" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23420075" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805756" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805756" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3438849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -304,16 +468,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/state/MainMenu.js" />
+    <entry file="file://$PROJECT_DIR$/src/state/levelHouse.js" />
+    <entry file="file://$PROJECT_DIR$/src/state/levelOutside.js" />
+    <entry file="file://$PROJECT_DIR$/src/state/Preloader.js" />
+    <entry file="file://$PROJECT_DIR$/src/state/Boot.js" />
+    <entry file="file://$PROJECT_DIR$/package.json" />
+    <entry file="file://$PROJECT_DIR$/server.js" />
+    <entry file="file://$PROJECT_DIR$/models/Users.js" />
+    <entry file="file://$PROJECT_DIR$/levelHouse.js" />
+    <entry file="file://$PROJECT_DIR$/Preloader.js" />
+    <entry file="file://$PROJECT_DIR$/Boot.js" />
+    <entry file="file://$PROJECT_DIR$/MainMenu.js" />
+    <entry file="file://$PROJECT_DIR$/levelOutside.js" />
     <entry file="file://$PROJECT_DIR$/src/bin/phaser.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-97982">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -321,7 +497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="34154" column="37" lean-forward="false" selection-start-line="34154" selection-start-column="23" selection-end-line="34154" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -329,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -337,7 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -345,15 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6045">
           <caret line="403" column="100" lean-forward="false" selection-start-line="403" selection-start-column="95" selection-end-line="403" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -362,61 +526,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="79" column="81" lean-forward="false" selection-start-line="79" selection-start-column="74" selection-end-line="79" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Waves.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Waves.js" />
     <entry file="file://$PROJECT_DIR$/src/levels/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="54" column="57" lean-forward="false" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding>
-            <marker date="1504126474000" expanded="true" signature="320:527" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -424,7 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -432,6 +545,231 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="104" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/states/Boot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/states/Preloader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="32" column="2" lean-forward="false" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/states/MainMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/maps/BuildMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/maps/InsideMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/phaser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="32629" column="84" lean-forward="false" selection-start-line="32629" selection-start-column="71" selection-end-line="32629" selection-end-column="84" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/statemachine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="175" column="2" lean-forward="false" selection-start-line="175" selection-start-column="2" selection-end-line="175" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/Bullets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/keyConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/helpers/outsideText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/events/outsideEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/maps/OutsideMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/Player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="886">
+          <caret line="95" column="36" lean-forward="false" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/Enemy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="67" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/ShotgunEnemy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/Merc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/sprites/Boss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="42" lean-forward="false" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/states/LevelOutside.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
