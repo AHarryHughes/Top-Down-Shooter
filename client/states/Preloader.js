@@ -1,4 +1,5 @@
-export default class Preload extends Phaser.State {
+const Phaser = require('../phaser.min.js');
+class Preloader extends Phaser.State {
 
     preload(){
         var blackURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAIAAABvrngfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY6AzYGAAAAByAAHo7e7HAAAAAElFTkSuQmCC';
@@ -31,3 +32,5 @@ export default class Preload extends Phaser.State {
     }
 
 };
+
+module.exports = Preloader;

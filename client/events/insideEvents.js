@@ -1,8 +1,6 @@
-const Phaser = require('../phaser.min.js');
+const insideEvents = {
 
-const outsideEvents = {
-
-    outsideOpeningTween: function (State){
+    insideOpeningTween: function (State){
         
             State.cutscene = true;
             State.player.position.set(State.map.entrance.x, State.map.entrance.y + 30);
@@ -18,4 +16,13 @@ const outsideEvents = {
 };
 
 
-module.exports = outsideEvents;
+
+module.exports = insideEvents;
+
+
+
+
+
+
+
+

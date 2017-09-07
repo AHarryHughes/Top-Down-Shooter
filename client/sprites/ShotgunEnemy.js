@@ -1,6 +1,7 @@
-import Bullets from './Bullets';
+const Phaser = require('../phaser.min.js');
+const Bullets = require('./Bullets');
 
-export default class ShotgunEnemy extends Phaser.Group{
+class ShotgunEnemy extends Phaser.Group{
 
     constructor(State) {
 
@@ -116,3 +117,6 @@ export default class ShotgunEnemy extends Phaser.Group{
     };
 
 };
+
+
+module.exports = ShotgunEnemy;

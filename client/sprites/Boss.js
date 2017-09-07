@@ -1,13 +1,16 @@
-import Bullets from './Bullets';
+const Phaser = require('../phaser.min.js');
 
-export default class Boss extends Phaser.Sprite{
+const Bullets = require('./Bullets');
+
+class Boss extends Phaser.Sprite{
 
     constructor(State){
 
+        super('player');
+
         let spawnPoint = this.chooseSpawn(State.map.spawnPoints);
 
-        super(spawnPoint.x, spawnPoint.y, 'player');
-
+        this.position.set(spawnPoint.x, spawnPoint.y);
         this.MOVE_SPEED = 500;
         this.tint = 0xff0000;
         this.anchor.set(0.5);
@@ -117,3 +120,6 @@ export default class Boss extends Phaser.Sprite{
     };
 
 }
+
+
+module.exports = Boss;

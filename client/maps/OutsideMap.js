@@ -1,4 +1,6 @@
-export default class OutsideMap extends Phaser.Tilemap {
+const Phaser = require('../phaser.min.js');
+
+class OutsideMap extends Phaser.Tilemap {
 
     constructor(State){
 
@@ -31,3 +33,5 @@ export default class OutsideMap extends Phaser.Tilemap {
     }
 
 }
+
+module.exports = OutsideMap;

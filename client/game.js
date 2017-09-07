@@ -1,4 +1,6 @@
-require('./phaser.min.js');
+
+const Phaser = require('./phaser.min.js');
+
 
 const Boot = require('./states/Boot');
 const Preloader = require('./states/Preloader');

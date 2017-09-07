@@ -1,4 +1,4 @@
-const Phaser = require('./phaser');
+const Phaser = require('./phaser.min.js');
 
 function keyConfig(State){
 
@@ -22,4 +22,4 @@ function keyConfig(State){
 
 }
 
-export { keyConfig };
+module.exports = keyConfig;

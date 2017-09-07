@@ -1,4 +1,5 @@
-export default class Bullets extends Phaser.Group{
+const Phaser = require('../phaser.min.js');
+class Bullets extends Phaser.Group{
 
     constructor(size, tint, amount){
 
@@ -21,3 +22,5 @@ export default class Bullets extends Phaser.Group{
     }
 
 }
+
+module.exports = Bullets;

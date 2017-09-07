@@ -1,6 +1,7 @@
-import Bullets from './Bullets';
+const Phaser = require('../phaser.min.js');
+const Bullets = require('./Bullets');
 
-export default class Player extends Phaser.Sprite{
+class Player extends Phaser.Sprite{
 
     constructor(State){
 
@@ -161,3 +162,5 @@ export default class Player extends Phaser.Sprite{
     }
 
 }
+
+module.exports = Player;

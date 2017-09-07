@@ -1,14 +1,15 @@
-import OutsideMap from '../maps/OutsideMap';
-import Player from '../sprites/Player';
-import Merc from '../sprites/Merc';
-import Boss from '../sprites/Boss';
-import Enemy from '../sprites/Enemy';
-import ShotgunEnemy from '../sprites/ShotgunEnemy';
-import { outsideOpeningTween } from '../events/outsideEvents';
-import { keyConfig } from '../keyConfig';
-import { textSetUp, textUpdate } from '../helpers/outsideText';
+const Phaser = require('../phaser.min.js');
+const OutsideMap = require('../maps/OutsideMap');
+const Player = require('../sprites/Player');
+const Merc = require('../sprites/Merc');
+const Boss = require('../sprites/Boss');
+const Enemy = require('../sprites/Enemy');
+const ShotgunEnemy = require('../sprites/ShotgunEnemy');
+const outsideEvents = require('../events/outsideEvents');
+const keyConfig = require('../keyConfig');
+const outsideText  = require('../helpers/outsideText');
 
-export default class LevelOutside extends Phaser.State {
+class LevelOutside extends Phaser.State {
 
     create(){
         //game state passed to the map class
@@ -25,7 +26,7 @@ export default class LevelOutside extends Phaser.State {
         this.wave = 1;
 
         //state passed to opening tween event in outside events
-        outsideOpeningTween(this);
+        outsideEvents.outsideOpeningTween(this);
 
         //lays foreground ontop of the map so sprites can walk under it
         let layerForeground = this.map.createLayer('Foreground');
@@ -35,14 +36,14 @@ export default class LevelOutside extends Phaser.State {
         keyConfig(this);
 
         //sets up text for game stats
-        textSetUp(this)
+        outsideText.textSetUp(this)
 
-    }
+    };
 
     update(){
 
         //updates game stats text
-        textUpdate(this);
+        outsideText.textUpdate(this);
 
 
         //for testing, but when mvp remove so the player can only access the inside when the 5th wave is over
@@ -63,9 +64,9 @@ export default class LevelOutside extends Phaser.State {
 
 
 
-    }
+    };
 
-    waveHandler = function(){
+    waveHandler(){
 
         this.waveEnemies = this.enemies.length + this.shotgunEnemies.length;
 
@@ -82,5 +83,5 @@ export default class LevelOutside extends Phaser.State {
 
 }
 
-
+module.exports = LevelOutside;
 

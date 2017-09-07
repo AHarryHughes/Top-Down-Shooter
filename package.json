@@ -1,13 +1,12 @@
 {
   "name": "top-down-shooter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A game built with the phaser framework",
   "main": "Boot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "browserify ./client/game.js -o bundle.js -t [ bubleify ]",
-    "dev": "watchify ./client/game.js -o bundle.js -t [ bubleify ]"
+    "build": "browserify ./client/game.js -o bundle.js -t [ babelify --presets [ es2015 ] ]"
   },
   "repository": {
     "type": "git",
@@ -20,18 +19,28 @@
   },
   "homepage": "https://github.com/AHarryHughes/Top-Down-Shooter#readme",
   "dependencies": {
+    "babel-loader": "^7.1.2",
+    "babelify": "^7.3.0",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
+    "browser-sync": "^2.18.13",
+    "expose-loader": "^0.7.3",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
     "express-validator": "^4.1.0",
     "mongodb": "^2.2.31",
     "mongoose": "^4.10.8",
-    "mustache-express": "^1.2.5"
+    "mustache-express": "^1.2.5",
+    "phaser": "^2.6.2",
+    "phaser-ce": "^2.8.5",
+    "pixi": "^0.3.1",
+    "pixi.js": "^4.0.3"
   },
   "devDependencies": {
+    "browser-sync-webpack-plugin": "^1.2.0",
     "browserify": "^14.4.0",
     "bubleify": "^0.7.0",
-    "watchify": "^3.9.0"
+    "watchify": "^3.9.0",
+    "webpack": "^3.5.5"
   }
 }

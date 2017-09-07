@@ -1,4 +1,6 @@
-export default class Boot extends Phaser.State {
+const Phaser = require('../phaser.min.js');
+
+class Boot extends Phaser.State {
 
     init(){
         this.game.input.maxPointers = 1;
@@ -10,3 +12,5 @@ export default class Boot extends Phaser.State {
     }
 
 };
+
+module.exports = Boot;

@@ -1,4 +1,5 @@
-export default class MainMenu extends Phaser.State {
+const Phaser = require('../phaser.min.js');
+class MainMenu extends Phaser.State {
 
     create(){
         background = this.game.add.sprite(0,0);
@@ -32,3 +33,5 @@ export default class MainMenu extends Phaser.State {
     }
 
 };
+
+module.exports = MainMenu;

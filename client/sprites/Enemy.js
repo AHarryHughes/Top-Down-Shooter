@@ -1,5 +1,6 @@
+const Phaser = require('../phaser.min.js');
 
-export default class Enemy extends Phaser.Group{
+class Enemy extends Phaser.Group{
 
     constructor(State){
 
@@ -101,3 +102,4 @@ export default class Enemy extends Phaser.Group{
 
 
 
+module.exports = Enemy;

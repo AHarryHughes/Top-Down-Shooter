@@ -1,6 +1,8 @@
-import Bullets from './Bullets';
+const Phaser = require('../phaser.min.js');
 
-export default class Merc extends Phaser.Group{
+const Bullets = require('./Bullets');
+
+class Merc extends Phaser.Group{
 
     constructor(amount){
 
@@ -120,3 +122,6 @@ export default class Merc extends Phaser.Group{
 
 
 }
+
+
+module.exports = Merc;
